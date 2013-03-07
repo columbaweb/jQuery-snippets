@@ -1,0 +1,9 @@
+<script type='text/javascript'>
+
+$(document).ready(function(){
+   $('.boxgrid.captionfull').hover(function(){
+      $(".cover", this).stop().animate({bottom:'0'},{queue:false,duration:160});
+   }, function() {
+      $(".cover", this).stop().animate({bottom:'-58px'},{queue:false,duration:160});
+   });
+</script>
