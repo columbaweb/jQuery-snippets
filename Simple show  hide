@@ -1,0 +1,7 @@
+<script type='text/javascript'>
+   $('.target').hide();
+   $('a.trigger').click(function () {
+      $('.target').toggle(100);
+      });
+   });
+</script>
