@@ -1,0 +1,13 @@
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/organictabs.jquery.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-ui-1.10.1.custom.min.js"></script>
+
+<script>
+   $(function() {
+        $( "#accordion" ).accordion({
+            heightStyle: content,
+            navigation: true
+        });       
+        if(location.hash) $(location.hash).click();
+       $('#link').click(function(){ $('#accordion').accordion({ active: 2 }); });
+    });
+</script>
