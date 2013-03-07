@@ -7,3 +7,28 @@ $(document).ready(function(){
       $(".cover", this).stop().animate({bottom:'-58px'},{queue:false,duration:160});
    });
 </script>
+
+
+
+
+HTML
+===============================================
+
+<ul>
+   <li>
+      <a class="boxgrid captionfull">
+         <img src="" width="" height="" alt="" />
+         <span class="cover boxcaption">
+            Caption text
+         </span>
+      </a>
+   </li>
+   <li>
+      <a class="boxgrid captionfull">
+         <img src="" width="" height="" alt="" />
+         <span class="cover boxcaption">
+            Caption text
+         </span>
+      </a>
+   </li>
+</ul>
