@@ -1,0 +1,13 @@
+<textarea id="feedback-text" name="feedback_text">This should be removed..</textarea>
+
+$("#feedback-text")
+  .focus(function() {
+        if (this.value === this.defaultValue) {
+            this.value = '';
+        }
+  })
+  .blur(function() {
+        if (this.value === '') {
+            this.value = this.defaultValue;
+        }
+});
