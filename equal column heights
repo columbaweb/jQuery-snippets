@@ -10,3 +10,25 @@ $(document).ready(function () {
 $(window).load(function(){
     $("#left_side").height($("#right_side").height());
 });
+
+
+
+
+
+
+
+<script>
+   function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = $(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+   group.height(tallest);
+}
+jQuery(document).ready(function() {
+   equalHeight($(".column"));
+});
+</script>
