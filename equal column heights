@@ -3,3 +3,10 @@ $(document).ready(function () {
     console.log(hgt);
     $("#sidebar,#content").height(hgt);
 })
+
+
+
+
+$(window).load(function(){
+    $("#left_side").height($("#right_side").height());
+});
