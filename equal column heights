@@ -1,0 +1,5 @@
+$(document).ready(function () {
+    var hgt = Math.max($("#content").height(), $("#sidebar").height());
+    console.log(hgt);
+    $("#sidebar,#content").height(hgt);
+})
