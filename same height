@@ -1,0 +1,42 @@
+jQuery(function($){
+	var doc = $(document);
+	var win = $(window);
+
+	doc.ready(function(){
+		sameHeight();
+		fixAboutTitles();
+	});
+
+	win.resize(function(){
+		sameHeight();
+		fixAboutTitles();
+	})
+
+	function sameHeight(){
+		if( win.width() < 751 ){ // 751 + browser scrollbar == 768 
+			$('.same-height').each(function(){
+				$(this).children().height( 'auto' );
+			});
+			$('.vertical-middle').width( '100%' ).height( 'auto' );
+		} else {
+			$('.same-height').each(function(){
+				var height = 0;
+				$(this).children().height( 'auto' ).each(function(){
+					if( $(this).height() > height ){
+						height = $(this).height();
+					}
+				}).height( height );
+			});
+			$('.vertical-middle').each(function(){
+				$(this).width( $(this).parent().width() ).height( $(this).parent().height() );
+			});
+		}
+	}
+	function fixAboutTitles(){
+		doc.find('#about-features-container li h3').attr( 'style', '' ).each(function(){
+			if( $(this).height() > 75 ){
+				$(this).css('line-height', '20px' );
+			}
+		});
+	}
+});
