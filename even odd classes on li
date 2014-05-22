@@ -1,0 +1,4 @@
+jQuery(document).ready(function() {
+        jQuery('ul.profile-to-do-wrap li:even').addClass ('even');
+        jQuery('ul.profile-to-do-wrap li:odd').addClass ('odd');
+    });
