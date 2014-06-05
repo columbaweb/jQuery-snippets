@@ -1,0 +1,20 @@
+$(document).ready(function() {
+    var $window = $(window);
+
+        // Function to handle changes to style classes based on window width
+        function checkWidth() {
+        if ($window.width() > 1500) {
+            $('.profiles').addClass('twocol');
+            };
+
+        if ($window.width() <= 1500) {
+            $('.profiles').removeClass('twocol');
+        }
+    }
+
+    // Execute on load
+    checkWidth();
+
+    // Bind event listener
+        $(window).resize(checkWidth);
+});
