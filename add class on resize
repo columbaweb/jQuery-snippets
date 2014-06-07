@@ -18,3 +18,34 @@ $(document).ready(function() {
     // Bind event listener
         $(window).resize(checkWidth);
 });
+
+
+
+======
+
+
+function readyFn( jQuery ) {
+    // Code to run when the document is ready.
+
+ var $window = $(window);
+
+        // Function to handle changes to style classes based on window width
+        function checkWidth() {
+        if ($window.width() > 700) {
+            $('body').addClass('twocol').removeClass('nottwocol');
+            };
+
+        if ($window.width() <= 700) {
+            $('body').removeClass('twocol').addClass('nottwocol');
+        }
+    }
+
+    // Execute on load
+    checkWidth();
+
+    // Bind event listener
+        $(window).resize(checkWidth);
+
+}
+ 
+$( document ).ready( readyFn );
