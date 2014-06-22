@@ -1,0 +1,14 @@
+// collapsible divs
+  jQuery(".accordion .panel").hide();
+  jQuery(".accordion h3").addClass('closed');
+
+  jQuery(".accordion h3").click(function() {
+    var $this = jQuery(this);
+    jQuery(this).next(".panel").slideToggle('fast', function() {
+      if($this.is('.open')) {
+      $this.removeClass("open").addClass('closed');
+      } else {
+      $this.removeClass("closed").addClass('open');
+      }     
+    });
+  });
