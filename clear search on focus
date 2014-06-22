@@ -1,0 +1,10 @@
+$(function() {
+		    var input = $('input.search-input');
+		    input.focus(function() {
+				$(this).val('');
+		    }).blur(function() {
+				var el = $(this);
+				if(el.val() == '')
+					el.val(el.attr('value'));
+		    });
+		});
