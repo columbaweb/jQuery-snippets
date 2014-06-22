@@ -1,0 +1,14 @@
+<input id="form1_budgetinput" name="budgetinput" value="3000" type="range" min="2000" max="12000" step="100" />
+
+// comma separator fo budget
+		function numberWithCommas(x) {
+		    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+		// budget output
+		$(function(){
+		    var currentValue = $('#currentValue');
+		    $('#form1_budgetinput').change(function(){
+		        currentValue.html(numberWithCommas(this.value));
+		    });
+		    $('#form1_budgetinput').change();
+		});
