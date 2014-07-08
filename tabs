@@ -1,0 +1,31 @@
+jQuery(document).ready(function(){
+  // Tabs Changer
+  // ===============================
+    //Default Action    
+    $(".tab-content").hide(); //Hide all content
+    if (jQuery(location).attr('hash').substr(1)!="") {
+        var activeTab = jQuery(location).attr('hash');
+        $("ul").find('li').removeClass('open');
+        $("ul.nav li").removeClass("active"); //Remove any "active" class
+        $(activeTab+"nav").addClass("active");
+        $(activeTab).show();
+    } else {
+        $("#tabs ul.nav .nav-tabs li:first").addClass("active").show(); //Activate first tab
+        $(".tab-content:first").show(); //Show first tab content   
+    }
+
+    //On Click Event
+    $("#tabs ul.nav li").click(function() {
+        $("ul").find('li').removeClass('open');
+        $("ul.nav li").removeClass("active"); //Remove any "active" class
+        $(this).addClass("active"); //Add "active" class to selected tab
+        var activeTab = jQuery(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+        if (activeTab.substr(0,1)=="#" && activeTab.substr(1)!="") { //Determine if a tab or link
+            $(".tab-content").hide(); //Hide all tab content
+            $(activeTab).fadeIn(); //Fade in the active content
+            return false;
+        } else {
+            return true; // If link allow redirect
+        }
+    });
+})
