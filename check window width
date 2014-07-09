@@ -1,0 +1,6 @@
+var $window = $(window);
+function checkWidth() {
+   if ($window.width() > 630) {
+        $('.same-height > div').css('border','1px solid gray');
+    }; 
+}
