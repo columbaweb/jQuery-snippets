@@ -1,0 +1,11 @@
+$(document).ready(function () {
+    $(".menu-item-has-children").hover(function () {
+     $(this).find('ul').slideToggle('medium');
+    });
+
+    var subMenu = $('menu-item-has-children > ul > li');
+
+    subMenu.hover(function () {
+      $(this).find("ul").slideToggle(200);
+    });
+});
